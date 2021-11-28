@@ -1,3 +1,23 @@
 .container {
-    display: flex
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.node {
+    margin: 20px;
+    flex: 1 1 200px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: rgb(188, 188, 235);
+    border: solid 1px #aaa;
+}
+
+.pods {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pod {
+    flex-grow: 1;
 }
