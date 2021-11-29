@@ -1,23 +1,75 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
 .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-grow: 1;
+    min-height: 100%;
+    background: rgb(39, 54, 99);
 }
 
 .node {
     margin: 20px;
-    flex: 1 1 200px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    background-color: rgb(188, 188, 235);
-    border: solid 1px #aaa;
+    padding: 10px;
+    width: 270px;
+    height: 100%;
+}
+
+.node>p {
+text-align: center;
+font-size: 1.5em;
+padding: 5px;
+margin-bottom: 5px;
 }
 
 .pods {
-    display: flex;
-    flex-wrap: wrap;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+align-content: start;
+height: 300px;
+overflow-y: scroll;
+border: solid 5px rgb(82, 191, 253);
 }
 
 .pod {
-    flex-grow: 1;
+width: 50px;
+height: 50px;
+margin-top: 10px;
+margin: 5px;
+background: rgb(82, 191, 253);
+}
+
+div[data-tooltip]:before {
+content: "";
+position: absolute;
+top: 0;
+display: none;
+}
+
+div[data-tooltip]:after {
+content: attr(data-tooltip);
+position: absolute;
+color: white;
+background: #bb2da3;
+padding: .25em .75em;
+border-radius: .5em;
+white-space: nowrap; 
+display: none;
+}
+
+div[data-tooltip]:hover:before,
+div[data-tooltip]:hover:after {
+display: inline;
 }
